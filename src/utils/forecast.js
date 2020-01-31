@@ -12,7 +12,7 @@ const forecast = (lat, long, callback) => {
         } else if(body.error) {
             callback('Invalid location');
         } else {
-            callback(undefined, `${body.daily.data[0].summary} It is currently ${body.currently.temperature} degrees Celsius. There is ${body.currently.precipProbability}% chance of rain.`)
+            callback(undefined, `${body.daily.data[0].summary} It is currently ${body.currently.temperature} degrees Celsius. There is ${body.currently.precipProbability}% chance of rain. Temperature high for today is ${body.daily.data[0].temperatureHigh} degrees Celsius, and temperature low is ${body.daily.data[0].temperatureLow} degrees Celsius`)
         }  
     })
 }
